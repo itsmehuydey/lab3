@@ -39,7 +39,7 @@ Defines can be found in **_conf_general.h_**
 
 | DEFINE               | DESCRIPTION                    | VALUE | DEFAULT / NOT DEFINE |
 | -------------------- | ------------------------------ | ----- | -------------------- |
-| USE_350W_HUB_MOTOR   | Config for 350W hub motor       |       | Use config default from VESC default lib below:<br>```<br>#include "mcconf_default.h"<br>#include "appconf_default.h"<br>``` |
+| USE_350W_HUB_MOTOR   | Config for 350W hub motor       |       | Use config default from VESC default lib below:```#include "mcconf_default.h" #include "appconf_default.h"``` |
 | USE_250W_HUB_MOTOR   | Config for 250W hub motor       |       |                      |
 | USE_STELLA_250       | Config for Stella 250 motor     |       |                      |
 | USE_STELLA_U_250     | Config for Stella U 250 motor   |       |                      |
