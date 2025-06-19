@@ -82,6 +82,10 @@ With x value is 1 for have and 0 for doesn’t have
 Enable the speed limit with an available threshold (this threshold often is 25KPH and depends on PAS levels)  
 Specific detail in `app_adc_pas.c`
 
+#define ENABLE_LIMIT_SPEED x
+
+With x value is `1 for enable` and `0 for disable`
+
 ## USE_UNLIMIT_SPEED
 Set speed threshold = **99 KPH**
 
@@ -93,10 +97,38 @@ Set speed threshold = **25 KPH**
 Define in `hw_viersc_core30.c`  
 This is an ERPM ratio to calculate RPM
 
-## RPM_2_ERPM x
+#define RPM_2_ERPM x
+
 With x is a value in range from 60 to 99
 
 ## USE_APP_DISPLAY
-....
+
+Define to enable app display for screen
+
+| DEFINE           | DESCRIPTION        | VALUE                                | DEFAULT / NOT DEFINE              |
+| ---------------- | ------------------ | ------------------------------------ | --------------------------------- |
+| USE_APP_DISPLAY  | Enable app display | If it's defined, use app with display | If isn’t defined, use app without display |
+
+## Cadence definitions
+
+Define cadence config  
+Refer to definitions in `app.h`
+
+| DEFINE                    | DESCRIPTION              | VALUE                                                | DEFAULT / NOT DEFINE |
+| -------------------------| ------------------------ | ---------------------------------------------------- | -------------------- |
+| ENABLE_CADENCE           | Enable cadence           | If it's defined, app init with cadence               | If isn’t defined, app init without cadence |
+| CADENCE_TYPE_DEFAULT     | Define cadence type      | CAD_1WIRES<br>CAD_2WIRES                             | CAD_2WIRES           |
+| CADENCE_PULSES_DEFAULT   | Define cadence pulse     | NO_CADENCE<br>CAD_8_PULSES<br>CAD_12_PULSES<br>CAD_16_PULSES<br>CAD_18_PULSES<br>CAD_24_PULSES<br>CAD_28_PULSES<br>CAD_32_PULSES<br>CAD_36_PULSES | CAD_18_PULSES        |
+| CADENCE_DIRECTION_DEFAULT| Define cadence direction | CAD_DIR_FW<br>CAD_DIR_RW                             |                      |
+
+## Ramp up ERPM
+
+| DEFINE                | DESCRIPTION                | VALUE              | DEFAULT / NOT DEFINE |
+| ---------------------| -------------------------- | ------------------ | -------------------- |
+| USE_RAMP_UP_ERPM     | Enable ramp up ERPM for motor | True (Enable ramp up) | Disable ramp up      |
+| MAX_ERPM_SET         | Set high limit for ERPM     | About 100000        |                      |
+| MIN_ERPM_SET         | Set low limit for ERPM      | About 10000         |                      |
+| USE_RAMP_UP_ERPM_TIME| Set time to execute ramp up | About 2.0 (second)  |                      |
+
 
 
